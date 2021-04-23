@@ -98,7 +98,7 @@ footer {
 
 
 
-
+/*quienes somos*/
 /* cabeza hero image*/
 
 .banner
@@ -144,6 +144,7 @@ footer {
   line-height: 2;
   font-size: 0.9em;
   font-family: cursive;
+  padding: 10%;
 
 }
 
@@ -203,6 +204,11 @@ section
   
 }
 
+.colorb
+{
+  color: #fff;
+}
+
 
 /*para darle color a algo especifico*/
 
@@ -221,20 +227,40 @@ section
 
 .section-4
 {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
- background-blend-mode: multiply,multiply;
+  background: #a1c4fd
 }
 
 
 /*tamaño video*/
 .tam-v
 {
-  width:"320";
+  width:"200";
   height:"240";
  
-  top:0;
+  align-items: center;
 
 }
+
+
+.bannerp
+{
+  
+  font-size: 22px;
+  font-family: cursive;
+  padding: 10%;
+  text-align: start;
+
+}
+
+.section2
+{
+  display: flex;
+  height: 160px;
+  justify-content: space-evenly;
+  padding: 0 40px;
+  align-items: center;
+}
+
 /* ----------------------------*/
 
 /*Galeria ofertas*/
@@ -267,6 +293,12 @@ section
 
 
 
+
+
+
+
+
+
 /* Galeria */
 .imagenes-Galeria{
   height: 215px;
@@ -281,3 +313,50 @@ section
   text-align: justify;
 
 }
+
+.texto {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container .row .card:hover .overlay{
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
