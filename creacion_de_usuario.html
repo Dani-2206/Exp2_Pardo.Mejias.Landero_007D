@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>Creacion de Usuario</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+    <link href="Css/estilos.css" type="text/css" rel="stylesheet">
+    <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fondo-barra ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+          <span class="navbar-toggler-icon"></span>
+           
+        </button>
+      
+      
+        <a class="navbar-brand">
+          <img src="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="50" height="50" alt="">
+        </a>
+      
+        
+  
+        
+  
+        <div class="collapse navbar-collapse" id="opciones">   
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " href="quienes_somos.html" >Quienes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-barra" href="galeria.html">Galeria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-barra" href="buscar.html">Buscar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-barra" href="inicio_session.html">Iniciar sesion</a>
+            </li>     
+       
+          </ul>
+        </div>
+      </nav>
+
+
+      <h3>Creacion de Usuauario</h3>
+
+        <div class="container">    
+          <form name="contact" method="POST"  action="inicio_session.html">
+
+            <div class="form-group">
+              <label class="lmensaje">Nombre:</label><br>
+              <input class="form-control" type="text" id="nombre" name="nombre" value="" placeholder="ingrese su nombre" required ><br>
+            </div>
+
+            <div class="form-group">
+              <label for="apellido">Apellidos:</label><br>
+              <input class="form-control" type="text" name="apellidos" id="apelldidos" required placeholder="ingrese su apellido"><br>
+            </div>
+
+            <div class="form-group">      
+              <label for="edad">Ingrese su edad :</label>
+              <input type="number" name="edad" id="edad"  placeholder="edad" min="7" max="100" maxlenght="3" required><br> 
+
+            </div>
+
+            <div class="form-group">
+              <label for="lnumero">Ingrese su numero telefonico:</label>
+
+              <input class="form-control" type="tel" id="NumeroT" name="numeroT" placeholder="1-2345-6789" pattern="[0-9]{1}-[0-9]{4}-[0-9]{4}">
+            </div>
+
+
+            <div class="form-group">
+              <label for="fechaN">Ingrese su fecha de nacimiento:</label> <br>
+              <input type="date" name="fechaN" id="fachaN" class="form-grop" required min="1921-01-01">                
+            </div>
+
+
+            
+            
+            <div class="form-check">
+              <label  class="form-check-label" for="lgenero">genero</label><br>
+              
+              <input type="radio" id="hombre" name="genero" value="hombre" class="from-check-input">
+              <label for="lhombre" class="from-check-label">Hombre</label><br>
+
+              <input type="radio" id="mujer" name="genero" value="Mujer" class="from-check-input">
+              <label for="lmujer" class="from-check-label">Mujer</label><br>
+              
+              <input type="radio" id="otro" name="genero" value="otro" class="from-check-input">
+              <label for="lotro" class="from-check-label">otro</label>
+              
+              
+            </div>
+
+            <div class="form-group">
+              <label for="lemail" class="form-check-label">email:</label>
+              <input type="email" class="form-control" id="email" placeholder="ingrese email" name="email" required>
+              
+            </div>
+
+            <div class="form-grop">
+              <label for="lusuario">Nombre Usuario:</label><br>
+
+              <input type="text" class="form-control" name="NombreU" id="NombreU" required placeholder="ingrese su nombre de usuario"><br>
+            </div>
+
+            <div class="form-group">
+              <label for="lcontra">Crea tu nueva contraseña:</label><br>
+              <input class="from-control" type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" >
+            </div>
+
+            <div class="form-group">
+              <label for="lcontra">repita su contraseña</label><br>
+              <input class="from-control" type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" >
+            </div>
+
+
+
+
+
+
+
+
+          
+            <input type="submit" values="Enviar">
+            <input type="reset" values="limpiar"><br>
+          </form>
+
+        </div>       <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <footer >
+        <div class="left col-md col-lg col-sm col-xl">
+          <img id="logo-footer" src="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg">
+          <h4>Autores: Cristobal Pardo,Daniel Landero y Ismael Mejias</h4>
+          
+          <h5>Redes Sociales</h5>
+          
+          <a href="https://www.facebook.com/Game-GTX-105894964946128"><img class="imagenes-iconos"  src="img/facebook.png" ></a>
+          
+          <a href="https://www.instagram.com/gamegtx/"><img class="imagenes-iconos"  src="img/instagram.jpg"> </a>
+          <br>
+          Gmail: Games_gtx@gmail.com  
+          derechos reservados &copy; 
+        </div>
+       
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    
+</body>
+</html>

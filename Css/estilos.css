@@ -227,7 +227,8 @@ section
 
 .section-4
 {
-  background: #a1c4fd
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;
 }
 
 
@@ -237,7 +238,7 @@ section
   width:"200";
   height:"240";
  
-  align-items: center;
+  top:0;
 
 }
 
@@ -316,17 +317,14 @@ section
 
 .texto {
   color: white;
-  
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   
 }
-
 
 .overlay {
   position: absolute;
