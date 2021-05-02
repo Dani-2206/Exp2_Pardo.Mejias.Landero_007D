@@ -2,12 +2,13 @@
 <html >
 <head>
     
-    <title>Creacion de Usuario</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
-    <link href="Css/estilos.css" type="text/css" rel="stylesheet">
-    <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
+  <title>Creacion de Usuario</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
+  <link href="Css/estilos.css" type="text/css" rel="stylesheet">
+  <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
+  <link rel="stylesheet" href="javascript/java.js">
 
 </head>
 <body>
@@ -49,7 +50,7 @@
       <h3>Creacion de Usuauario</h3>
 
         <div class="container">    
-          <form name="contact" method="POST"  action="inicio_session.html">
+          <form name="contact" method="POST"  action="inicio_session.html" onsubmit="return validacion()">
 
             <div class="form-group">
               <label class="lmensaje">Nombre:</label><br>
@@ -58,7 +59,7 @@
 
             <div class="form-group">
               <label for="apellido">Apellidos:</label><br>
-              <input class="form-control" type="text" name="apellidos" id="apelldidos" required placeholder="ingrese su apellido"><br>
+              <input class="form-control" type="text" name="apellidos" id="apellidos" required placeholder="ingrese su apellido"><br>
             </div>
 
             <div class="form-group">      
@@ -70,13 +71,13 @@
             <div class="form-group">
               <label for="lnumero">Ingrese su numero telefonico:</label>
 
-              <input class="form-control" type="tel" id="NumeroT" name="numeroT" placeholder="1-2345-6789" pattern="[0-9]{1}-[0-9]{4}-[0-9]{4}">
+              <input class="form-control" type="tel" id="NumeroT" name="numeroT" placeholder="123456789" pattern="[0-9]{1}[0-9]{4}[0-9]{4}">
             </div>
 
 
             <div class="form-group">
               <label for="fechaN">Ingrese su fecha de nacimiento:</label> <br>
-              <input type="date" name="fechaN" id="fachaN" class="form-grop" required min="1921-01-01">                
+              <input type="date" name="fechaN" id="fechaN" class="form-grop" required min="1921-01-01">                
             </div>
 
 
@@ -116,7 +117,7 @@
 
             <div class="form-group">
               <label for="lcontra">repita su contraseña</label><br>
-              <input class="from-control" type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" >
+              <input class="from-control" type="password" id="contraseña2" name="contraseña2" placeholder="ingrese su contraseña" >
             </div>
 
 
