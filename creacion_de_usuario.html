@@ -8,7 +8,129 @@
   <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
   <link href="Css/estilos.css" type="text/css" rel="stylesheet">
   <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
-  <link rel="stylesheet" href="javascript/java.js">
+  <script src="javascript/java.js"></script>
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+  <script> 
+
+    $(function()
+    {
+      $('#formulario_creacion').validate({
+        rules: {
+          nombre:{
+            Text: true,
+            requiered: true,
+          },
+
+          apellido:{
+            Text:true,
+            requiered:true,
+
+
+          },
+
+          edad:{
+            Number: true,
+            requiered:true,
+          },
+
+          NumeroT:
+          {
+            Number:true,
+            requiered:true,
+          },
+
+          fechaN:"requiered",
+
+          genero:"requiered",
+
+          email:
+          {
+            requiered:true,
+            email:true
+          },
+
+          NombreU:"requiered",
+
+          contraseña:"requiered",
+
+          contraseña2:{
+            requiered:true,
+            equalTo:"#contraseña"
+
+          }
+          
+
+        },
+
+        messages:{
+
+          nombre:{
+            requiered:"debe ingresar su nombre",
+            Text:"debe ser tipo texto",
+            minlength:"debe ingresar por lo menos 3 caracteres"
+          },
+
+          apellido:{
+            requiered:"debe ingresar su apellido",
+            Text:"debe ser tipo texto",
+            minlength:"debe ingresar por lo menos 5 caracteres"
+          },
+
+          edad:{
+            Number:"debe ingresar numeros",
+            requiered:"debe ingresar un dato"
+
+          },
+
+          NumeroT:{
+            Number:"debe ingresar numeros",
+            requiered:"debe ingresar un dato",
+            minlength:"deben ser por lo menos 9 numeros"
+          },
+
+          fechaN:{
+            requiered:"debe colocar una fecha"
+          },
+
+          genero:{
+            requiered:"debe colocar un genero "
+
+          },
+
+          email:{
+            requiered:"debe colocar un email",
+            email:"debe colocarlo con el formato solicitado"
+          },
+
+          NombreU:{
+            requiered:"debe colocar un nombre de usuario",
+            minlength:"debe colocar por lo menos 8 caracteres"
+          },
+
+          contraseña:{
+            requiered:"debe colocar una contraseña",
+            minlength:"debe colocar por lo menos 8 caracteres"
+          },
+
+          contraseña2:{
+            requiered:"debe colocar una contraseña",
+            minlength:"debe colocar por lo menos 8 caracteres",
+            equalTo: "deben ser iguales"
+          }
+
+        }
+        
+      });
+      
+
+    });
+
+  </script>
+  
 
 </head>
 <body>
@@ -52,16 +174,16 @@
       <h3 class="alinear">Creacion de Usuario</h3>
 
         <div class="container">    
-          <form name="contact" method="POST"  action="inicio_session.html" onsubmit="return validacion()">
+          <form name="contact" method="POST"  action="inicio_session.html"  id="formulario_creacion">
 
             <div class="form-group">
               <label class="lmensaje">Nombre:</label><br>
-              <input class="form-control" type="text" id="nombre" name="nombre" value="" placeholder="ingrese su nombre" required ><br>
+              <input class="form-control" type="text" id="nombre" name="nombre" value="" placeholder="ingrese su nombre" required minlength="3" onchange="mayusculas()"><br>
             </div>
 
             <div class="form-group">
-              <label for="apellido">Apellidos:</label><br>
-              <input class="form-control" type="text" name="apellidos" id="apellidos" required placeholder="ingrese su apellido"><br>
+              <label for="apellido">Apellido:</label><br>
+              <input class="form-control" type="text" name="apellido" id="apellido" required placeholder="ingrese su apellido" minlength="5" onchange="mayusculas2()"><br>
             </div>
 
             <div class="form-group">      
@@ -73,7 +195,7 @@
             <div class="form-group">
               <label for="lnumero">Ingrese su número de teléfono:</label>
 
-              <input class="form-control" type="tel" id="NumeroT" name="numeroT" placeholder="123456789" pattern="[0-9]-{1}[0-9]{4}[0-9]{4}">
+              <input class="form-control" type="number" id="NumeroT" name="numeroT" placeholder="123456789" minlength="9">
             </div>
 
 
@@ -88,13 +210,13 @@
             <div class="form-check">
               <label  class="form-check-label" for="lgenero">Ingrese su género:</label><br>
               
-              <input type="radio" id="hombre" name="genero" value="hombre" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="hombre" class="from-check-input">
               <label for="lhombre" class="from-check-label">Hombre</label><br>
 
-              <input type="radio" id="mujer" name="genero" value="Mujer" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="Mujer" class="from-check-input">
               <label for="lmujer" class="from-check-label">Mujer</label><br>
               
-              <input type="radio" id="otro" name="genero" value="otro" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="otro" class="from-check-input">
               <label for="lotro" class="from-check-label">otro</label>
               
               
@@ -102,24 +224,24 @@
 
             <div class="form-group">
               <label for="lemail" class="form-check-label">Ingrese su email:</label>
-              <input type="email" class="form-control" id="email" placeholder="fulanito@gmail.com" name="email" required>
+              <input type="text" class="form-control" id="email" placeholder="fulanito@gmail.com" name="email" required>
               
             </div>
 
             <div class="form-grop">
               <label for="lusuario">Nombre Usuario:</label><br>
 
-              <input type="text" class="form-control" name="NombreU" id="NombreU" required placeholder="ingrese su nombre de usuario"><br>
+              <input type="text" class="form-control" name="NombreU" id="NombreU" required placeholder="ingrese su nombre de usuario" minlength="8"><br>
             </div>
 
             <div class="form-group">
               <label for="lcontra">Crea tu nueva contraseña:</label><br>
-              <input class="from-control" type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" >
+              <input class="from-control" type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" minlength="8">
             </div>
 
             <div class="form-group">
               <label for="lcontra">Repita su contraseña</label><br>
-              <input class="from-control" type="password" id="contraseña2" name="contraseña2" placeholder="ingrese su contraseña" >
+              <input class="from-control" type="password" id="contraseña2" name="contraseña2" placeholder="ingrese su contraseña" minlength="8">
             </div>
             <a href="Tipo_de_Juegos.html">pinche aqui para usted colocar sus preferencias en juegos</a><br><br>
 
@@ -131,8 +253,8 @@
 
 
           
-            <input type="submit" values="Enviar">
-            <input type="reset" values="limpiar"><br>
+            <input type="submit" values="Enviar" >
+            <input type="reset" values="limpiar" onclick="mensaje()"><br>
           </form>
 
         </div>       <br>

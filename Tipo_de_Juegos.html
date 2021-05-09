@@ -8,10 +8,63 @@
         <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
         <link href="Css/estilos.css" type="text/css" rel="stylesheet">
         <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
-        <link rel="stylesheet" href="javascript/java.js">
-      
+        <script src="javascript/java.js"></script>
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+        <script>
+          $(function(){
+            $('#formulario_juegos').validate({
+              rules:{
+                gustos:
+                {
+                  Text: true,
+                  requiered: true,
+                },
+                lanzamientos:
+                {
+                  Text: true,
+                  requiered: true,
+                },
+                tipogamer:"requiered",
+                genero:"requiered",
+                email:
+                {
+                  requiered:true,
+                  email:true
+                }
+              },
+              messages:{
+                gustos:{
+                  requiered:"debe ingresar sus gustos",
+                  Text:"debe ser tipo texto",
+                  minlength:"debe ingresar por lo menos 10 caracteres"
+                },
+                lanzamientos:{
+                  requiered:"debe ingresar lanzamientos",
+                  Text:"debe ser tipo texto",
+                  minlength:"debe ingresar por lo menos 10 caracteres"
+                },
+                tipogamer:{
+                  requiered:"Debe selecionar un tipo"
+                },
+                genero:{
+                  requiered:"debe colocar un genero "
+
+                },
+                email:{
+                  requiered:"debe colocar un email",
+                  email:"debe colocarlo con el formato solicitado"
+                }
+              }
+              
+
+            }); 
+          });
+        </script>
+
       </head>
-</html>
+
 
 <body>
   <nav class="navbar navbar-expand-sm navbar-light bg-light fondo-barra ">
@@ -51,33 +104,38 @@
     <h3>Juegos que les gusta</h3>
 
         <div class="container">    
-          <form name="contact" method="POST"  action="galeria.html" onsubmit="return validacion()">
+          <form name="contact" method="POST"  action="galeria.html" id="formulario_juegos">
 
             <div class="form-group">
               <label class="lmensaje">Juegos que les gusta</label><br>
-              <input class="form-control" type="text" id="nombre del juego" required><br>
+              <input class="form-control" type="text" id="gustos" name="gustos" required minlength="10"><br>
             </div>
 
             <div class="form-group">
               <label for="Juegos Lanzados">Ultimos lanzamientos</label><br>
-              <input class="form-control" type="text" name="Nombre del juegos" required><br>
+              <input class="form-control" type="text" id="lanzamientos" name="lanzamientos" required minlength="10"><br>
             </div>
 
-            <div class="form-group">
-                <label form="tipo de gamer">¿Que tipo de Gamer eres tu?</label>
-                <input class="form-control" type="text" name="tipo Gamer" requiered><br>
+            <div class="form-check">
+              <label  class="form-check-label" for="lgamer">¿Que tipo de Gamer eres tu?</label><br>
+              
+              <input type="radio" id="tipogamer" name="tipogamer" value="casual" class="from-check-input">
+              <label for="lcasual" class="from-check-label">Casual</label><br>
+              
+              <input type="radio" id="tipogamer" name="tipogamer" value="hardcore" class="from-check-input">
+              <label for="lhardcore" class="from-check-label">Hardcore</label><br>
             </div>
 
             <div class="form-check">
               <label  class="form-check-label" for="lgenero">Seleccione su género</label><br>
               
-              <input type="radio" id="hombre" name="genero" value="hombre" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="hombre" class="from-check-input">
               <label for="lhombre" class="from-check-label">Hombre</label><br>
 
-              <input type="radio" id="mujer" name="genero" value="Mujer" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="Mujer" class="from-check-input">
               <label for="lmujer" class="from-check-label">Mujer</label><br>
               
-              <input type="radio" id="otro" name="genero" value="otro" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="otro" class="from-check-input">
               <label for="lotro" class="from-check-label">otro</label>
               
               
@@ -93,7 +151,7 @@
 
   
             <input type="submit" values="Enviar">
-            <input type="reset" values="limpiar"><br>
+            <input type="reset" values="limpiar" onclick="mensaje()"><br>
           </form>
 
         </div>       
