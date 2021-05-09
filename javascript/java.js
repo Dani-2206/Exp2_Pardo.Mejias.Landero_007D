@@ -20,3 +20,17 @@ function mayusculas2()
     a.value = a.value.toUpperCase();
 
 }
+
+function cambiarc(a)
+
+{
+
+    a.style.background = "#66D374";
+
+}
+
+function volver(b)
+{
+    b.style.background="white";
+
+}
