@@ -14,11 +14,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
 
+
+  <style>
+    .error-control {
+        border: 1px solid red;
+    }
+
+    label.error {
+        color: red;
+        width: 300px;
+        font-size: 0.8em;
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+    
+
+  </style>
+
   <script> 
 
     $(function()
     {
-      $('#formulario_creacion').validate({
+      $("#formulario_creacion").validate({
         rules: {
           nombre:{
             Text: true,
@@ -42,6 +59,7 @@
             Number:true,
             requiered:true,
           },
+          
 
           fechaN:"requiered",
 
@@ -69,57 +87,57 @@
         messages:{
 
           nombre:{
-            requiered:"debe ingresar su nombre",
-            Text:"debe ser tipo texto",
-            minlength:"debe ingresar por lo menos 3 caracteres"
+            requiered:'debe ingresar su nombre',
+            Text:'debe ser tipo texto',
+            minlength:'debe ingresar por lo menos 3 caracteres'
           },
 
           apellido:{
-            requiered:"debe ingresar su apellido",
-            Text:"debe ser tipo texto",
-            minlength:"debe ingresar por lo menos 5 caracteres"
+            requiered:'debe ingresar su apellido',
+            Text:'debe ser tipo texto',
+            minlength:'debe ingresar por lo menos 5 caracteres'
           },
 
           edad:{
-            Number:"debe ingresar numeros",
-            requiered:"debe ingresar un dato"
+            Number:'debe ingresar numeros',
+            requiered:'debe ingresar un dato'
 
           },
 
           NumeroT:{
-            Number:"debe ingresar numeros",
-            requiered:"debe ingresar un dato",
-            minlength:"deben ser por lo menos 9 numeros"
+            Number:'debe ingresar numeros',
+            requiered:'debe ingresar un dato',
+            minlength:'deben ser por lo menos 9 numeros'
           },
 
           fechaN:{
-            requiered:"debe colocar una fecha"
+            requiered:'debe colocar una fecha'
           },
 
           genero:{
-            requiered:"debe colocar un genero "
+            requiered:'debe colocar un genero '
 
           },
 
           email:{
-            requiered:"debe colocar un email",
-            email:"debe colocarlo con el formato solicitado"
+            requiered:'debe colocar un email',
+            email:'debe colocarlo con el formato solicitado'
           },
 
           NombreU:{
-            requiered:"debe colocar un nombre de usuario",
-            minlength:"debe colocar por lo menos 8 caracteres"
+            requiered:'debe colocar un nombre de usuario',
+            minlength:'debe colocar por lo menos 8 caracteres'
           },
 
           contraseña:{
-            requiered:"debe colocar una contraseña",
-            minlength:"debe colocar por lo menos 8 caracteres"
+            requiered:'debe colocar una contraseña',
+            minlength:'debe colocar por lo menos 8 caracteres'
           },
 
           contraseña2:{
-            requiered:"debe colocar una contraseña",
-            minlength:"debe colocar por lo menos 8 caracteres",
-            equalTo: "deben ser iguales"
+            requiered:'debe colocar una contraseña',
+            minlength:'debe colocar por lo menos 8 caracteres',
+            equalTo: 'deben ser iguales'
           }
 
         }
@@ -176,7 +194,7 @@
         <div class="container">    
           <form name="contact" method="POST"  action="inicio_session.html"  id="formulario_creacion">
 
-            <div class="form-group">
+            <div class="form-grop">
               <label class="lmensaje">Nombre:</label><br>
               <input class="form-control" type="text" id="nombre" name="nombre" value="" placeholder="ingrese su nombre" required minlength="3" onchange="mayusculas()" onfocus="cambiarc(this)" onmouseout="volver(this)"><br>
             </div>
@@ -243,6 +261,7 @@
               <label for="lcontra">Repita su contraseña</label><br>
               <input class="from-control" type="password" id="contraseña2" name="contraseña2" placeholder="ingrese su contraseña" minlength="8" onfocus="cambiarc(this)" onmouseout="volver(this)">
             </div>
+            
             <a href="Tipo_de_Juegos.html">pinche aqui para usted colocar sus preferencias en juegos</a><br><br>
 
 
@@ -276,6 +295,7 @@
 
 
       <footer >
+
         <div class="left col-md col-lg col-sm col-xl">
           <img id="logo-footer" src="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg">
           <h4>Autores: Cristobal Pardo,Daniel Landero y Ismael Mejias</h4>
@@ -291,6 +311,8 @@
         </div>
        
       </footer>
+
+
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
