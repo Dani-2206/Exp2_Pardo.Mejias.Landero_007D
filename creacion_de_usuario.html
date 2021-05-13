@@ -10,10 +10,9 @@
   <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
   <script src="javascript/java.js"></script>
 
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
-
+  
 
   <style>
     .error-control {
@@ -39,44 +38,44 @@
         rules: {
           nombre:{
             Text: true,
-            requiered: true,
+            required: true,
           },
 
           apellido:{
             Text:true,
-            requiered:true,
+            required:true,
 
 
           },
 
           edad:{
             Number: true,
-            requiered:true,
+            required:true,
           },
 
           NumeroT:
           {
             Number:true,
-            requiered:true,
+            required:true,
           },
           
 
-          fechaN:"requiered",
+          fechaN:"required",
 
-          genero:"requiered",
+          genero:{ required:true },
 
           email:
           {
-            requiered:true,
+            required:true,
             email:true
           },
 
-          NombreU:"requiered",
+          NombreU:"required",
 
-          contraseña:"requiered",
+          contraseña:"required",
 
           contraseña2:{
-            requiered:true,
+            required:true,
             equalTo:"#contraseña"
 
           }
@@ -87,55 +86,55 @@
         messages:{
 
           nombre:{
-            requiered:'debe ingresar su nombre',
+            required:'debe ingresar su nombre',
             Text:'debe ser tipo texto',
             minlength:'debe ingresar por lo menos 3 caracteres'
           },
 
           apellido:{
-            requiered:'debe ingresar su apellido',
+            required:'debe ingresar su apellido',
             Text:'debe ser tipo texto',
             minlength:'debe ingresar por lo menos 5 caracteres'
           },
 
           edad:{
             Number:'debe ingresar numeros',
-            requiered:'debe ingresar un dato'
+            required:'debe ingresar un dato'
 
           },
 
           NumeroT:{
             Number:'debe ingresar numeros',
-            requiered:'debe ingresar un dato',
+            required:'debe ingresar un dato',
             minlength:'deben ser por lo menos 9 numeros'
           },
 
           fechaN:{
-            requiered:'debe colocar una fecha'
+            required:'debe colocar una fecha'
           },
 
           genero:{
-            requiered:'debe colocar un genero '
+            required:'debe seleccionar un genero '
 
           },
 
           email:{
-            requiered:'debe colocar un email',
+            required:'debe colocar un email',
             email:'debe colocarlo con el formato solicitado'
           },
 
           NombreU:{
-            requiered:'debe colocar un nombre de usuario',
+            required:'debe colocar un nombre de usuario',
             minlength:'debe colocar por lo menos 8 caracteres'
           },
 
           contraseña:{
-            requiered:'debe colocar una contraseña',
+            required:'debe colocar una contraseña',
             minlength:'debe colocar por lo menos 8 caracteres'
           },
 
           contraseña2:{
-            requiered:'debe colocar una contraseña',
+            required:'debe colocar una contraseña',
             minlength:'debe colocar por lo menos 8 caracteres',
             equalTo: 'deben ser iguales'
           }
@@ -226,15 +225,15 @@
             
             
             <div class="form-check">
-              <label  class="form-check-label" for="lgenero">Ingrese su género:</label><br>
+              <label  class="form-check-label" for="genero">Seleccione su género:</label><br>
               
-              <input type="radio" id="genero" name="genero" value="hombre" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="hombre" class="from-check-input" required>
               <label for="lhombre" class="from-check-label">Hombre</label><br>
 
-              <input type="radio" id="genero" name="genero" value="Mujer" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="Mujer" class="from-check-input" required>
               <label for="lmujer" class="from-check-label">Mujer</label><br>
               
-              <input type="radio" id="genero" name="genero" value="otro" class="from-check-input">
+              <input type="radio" id="genero" name="genero" value="otro" class="from-check-input" required>
               <label for="lotro" class="from-check-label">otro</label>
               
               
