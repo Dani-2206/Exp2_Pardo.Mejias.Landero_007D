@@ -8,10 +8,11 @@
   <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
   <link href="Css/estilos.css" type="text/css" rel="stylesheet">
   <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
-  <script src="javascript/java.js"></script>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  <script src="javascript/java.js"></script>
   
 
   <style>
@@ -212,7 +213,7 @@
             <div class="form-group">
               <label for="lnumero">Ingrese su número de teléfono:</label>
 
-              <input class="form-control" type="number" id="NumeroT" name="numeroT" placeholder="123456789" minlength="9" onfocus="cambiarc(this)" onmouseout="volver(this)">
+              <input class="form-control" type="number" id="NumeroT" name="numeroT" placeholder="123456789" minlength="9" onfocus="cambiarc(this)" onmouseout="volver(this)" required>
             </div>
 
 
@@ -241,7 +242,7 @@
 
             <div class="form-group">
               <label for="lemail" class="form-check-label">Ingrese su email:</label>
-              <input type="text" class="form-control" id="email" placeholder="fulanito@gmail.com" name="email" required onfocus="cambiarc(this)" onmouseout="volver(this)">
+              <input type="email" class="form-control" id="email" placeholder="fulanito@gmail.com" name="email" required onfocus="cambiarc(this)" onmouseout="volver(this)">
               
             </div>
 
