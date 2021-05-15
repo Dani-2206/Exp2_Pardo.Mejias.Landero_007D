@@ -1,12 +1,43 @@
 <!doctype html>
-<html>
+<html >
   <head>
-    <title>Pagina Principal</title> 
+    <title>Página Principal</title> 
     <meta charset="utf-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
     <link href="Css/estilos.css" type="text/css" rel="stylesheet">
+    
+   
     <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
+
+
+ 
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("#solicitar").click(function(){
+
+                $.get("https://mindicador.cl/api",
+                    function(data){
+                        
+                        $.each(data,function(i,item){
+                            $("#monedas").append("<tr><td>"+item.codigo+"</td><td>"+item.nombre +
+                            "</td><td>"+ item.valor+ "</td><td>" + item.fecha + "</td></tr>");
+                            
+
+                        });
+
+                    });
+            });
+        });
+
+    </script>
+
+    
 
   </head>
   <body  class="color-f">
@@ -112,7 +143,7 @@
 
 
      <!--contenedor div del titulo -->
-   <div class=container id="container-ofertas">
+   <div class="container" id="container-ofertas">
      <h4 class="center letras-ofertas"> Ofertas del Mes </h4>
 
    </div>
@@ -201,6 +232,34 @@
 
       </p>
   </div> 
+
+
+
+  <h1>Consulte su moneda aqui</h1>
+  <hr>
+  <div id="caja">
+      <button type="button" id="solicitar">Preguntar tipo de moneda</button>
+  </div>
+  <br><br>
+
+
+  <table class="table" id="monedas">
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+
+
 
 
 
