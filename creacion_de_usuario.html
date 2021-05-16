@@ -9,15 +9,16 @@
   <link href="Css/estilos.css" type="text/css" rel="stylesheet">
   <link rel="icon" type="image/css" href="img/9fef4a51-6960-4549-9802-c9310a17944f.jpg" width="30" height="30">
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  
+
   <script src="javascript/java.js"></script>
   
 
   <style>
     .error-control {
-        border: 1px solid red;
+        border: 5px solid red;
     }
 
     label.error {
@@ -37,104 +38,94 @@
     {
       $("#formulario_creacion").validate({
         rules: {
-          nombre:{
-            Text: true,
+          nom: "required",
+          
+          apellido: "required",
+
+          edad: {
+            number: true,
             required: true,
           },
 
-          apellido:{
-            Text:true,
-            required:true,
-
-
-          },
-
-          edad:{
-            Number: true,
-            required:true,
-          },
-
-          NumeroT:
+          numeroT:
           {
-            Number:true,
-            required:true,
+            number: true,
+            required: true,
           },
           
 
-          fechaN:"required",
+          fechaN: "required",
 
-          genero:{ required:true },
+          genero: { required:true },
 
           email:
           {
-            required:true,
-            email:true
+            required: true,
+            email: true
           },
 
-          NombreU:"required",
+          nombreU: "required",
 
-          contraseña:"required",
+          contraseña: "required",
 
-          contraseña2:{
-            required:true,
-            equalTo:"#contraseña"
+          contraseña2: {
+            required: true,
+            equalTo: "#contraseña"
 
           }
           
 
         },
 
-        messages:{
+        messages: {
 
-          nombre:{
+          nom: {
             required:'debe ingresar su nombre',
-            Text:'debe ser tipo texto',
             minlength:'debe ingresar por lo menos 3 caracteres'
           },
 
-          apellido:{
+          apellido: {
             required:'debe ingresar su apellido',
-            Text:'debe ser tipo texto',
             minlength:'debe ingresar por lo menos 5 caracteres'
           },
 
-          edad:{
+          edad: {
             Number:'debe ingresar numeros',
-            required:'debe ingresar un dato'
+            required:'debe ingresar una edad'
 
           },
 
-          NumeroT:{
+          numeroT: {
             Number:'debe ingresar numeros',
-            required:'debe ingresar un dato',
+            required:'debe ingresar un numero de telefono',
             minlength:'deben ser por lo menos 9 numeros'
           },
 
-          fechaN:{
+          fechaN: {
             required:'debe colocar una fecha'
           },
 
-          genero:{
+          genero: {
             required:'debe seleccionar un genero '
 
           },
 
-          email:{
+          email: {
             required:'debe colocar un email',
             email:'debe colocarlo con el formato solicitado'
           },
 
-          NombreU:{
+          NombreU: {
             required:'debe colocar un nombre de usuario',
             minlength:'debe colocar por lo menos 8 caracteres'
           },
 
-          contraseña:{
+          contraseña: {
             required:'debe colocar una contraseña',
             minlength:'debe colocar por lo menos 8 caracteres'
           },
 
-          contraseña2:{
+          contraseña2: {
             required:'debe colocar una contraseña',
             minlength:'debe colocar por lo menos 8 caracteres',
             equalTo: 'deben ser iguales'
@@ -196,30 +187,30 @@
 
             <div class="form-grop">
               <label class="lmensaje">Nombre:</label><br>
-              <input class="form-control" type="text" id="nombre" name="nombre" value="" placeholder="ingrese su nombre" required minlength="3" onchange="mayusculas()" onfocus="cambiarc(this)" onmouseout="volver(this)"><br>
+              <input class="form-control" type="text" id="nombre" name="nom" value="" placeholder="ingrese su nombre" required onchange="mayusculas()" onfocus="cambiarc(this)" onmouseout="volver(this)" required minlength="3"><br>
             </div>
 
             <div class="form-group">
               <label for="apellido">Apellido:</label><br>
-              <input class="form-control" type="text" name="apellido" id="apellido" required placeholder="ingrese su apellido" minlength="5" onchange="mayusculas2()" onfocus="cambiarc(this)" onmouseout="volver(this)"><br>
+              <input class="form-control" type="text" name="apellido" id="apellido" required placeholder="ingrese su apellido" onchange="mayusculas2()" onfocus="cambiarc(this)" onmouseout="volver(this)"  required minlength="5"><br>
             </div>
 
             <div class="form-group">      
-              <label for="edad">Ingrese su edad :</label>
+              <label for="edad">Ingrese su edad :</label><br>
               <input type="number" name="edad" id="edad"  placeholder="edad" min="7" max="100" maxlenght="3" required><br> 
 
             </div>
 
             <div class="form-group">
-              <label for="lnumero">Ingrese su número de teléfono:</label>
+              <label for="lnumero">Ingrese su número de teléfono:</label><br>
 
-              <input class="form-control" type="number" id="NumeroT" name="numeroT" placeholder="123456789" minlength="9" onfocus="cambiarc(this)" onmouseout="volver(this)" required>
+              <input class="form-control" type="text" id="NumeroT" name="numeroT" placeholder="123456789" minlength="9" onfocus="cambiarc(this)" onmouseout="volver(this)" required>
             </div>
 
 
             <div class="form-group">
               <label for="fechaN">Ingrese su fecha de nacimiento:</label> <br>
-              <input type="date" name="fechaN" id="fechaN" class="form-grop" required min="1921-01-01">                
+              <input type="date" name="fechaN" id="fechaN" class="form-grop" required min="1921-01-01"  required>              
             </div>
 
 
@@ -228,13 +219,13 @@
             <div class="form-check">
               <label  class="form-check-label" for="genero">Seleccione su género:</label><br>
               
-              <input type="radio" id="genero" name="genero" value="hombre" class="from-check-input" required>
+              <input type="radio" id="gHombre" name="genero" value="hombre" class="from-check-input" required>
               <label for="lhombre" class="from-check-label">Hombre</label><br>
 
-              <input type="radio" id="genero" name="genero" value="Mujer" class="from-check-input" required>
+              <input type="radio" id="gMujer" name="genero" value="Mujer" class="from-check-input" required>
               <label for="lmujer" class="from-check-label">Mujer</label><br>
               
-              <input type="radio" id="genero" name="genero" value="otro" class="from-check-input" required>
+              <input type="radio" id="gOtro" name="genero" value="otro" class="from-check-input" required>
               <label for="lotro" class="from-check-label">otro</label>
               
               
@@ -242,24 +233,24 @@
 
             <div class="form-group">
               <label for="lemail" class="form-check-label">Ingrese su email:</label>
-              <input type="email" class="form-control" id="email" placeholder="fulanito@gmail.com" name="email" required onfocus="cambiarc(this)" onmouseout="volver(this)">
+              <input type="email" class="form-control" id="email" placeholder="fulanito@gmail.com" name="email" required onfocus="cambiarc(this)" onmouseout="volver(this)"  required>
               
             </div>
 
             <div class="form-grop">
               <label for="lusuario">Nombre Usuario:</label><br>
 
-              <input type="text" class="form-control" name="NombreU" id="NombreU" required placeholder="ingrese su nombre de usuario" minlength="8" onfocus="cambiarc(this)" onmouseout="volver(this)"><br>
+              <input type="text" class="form-control" name="NombreU" id="NombreU" required placeholder="ingrese su nombre de usuario" minlength="8" onfocus="cambiarc(this)" onmouseout="volver(this)"  required><br>
             </div>
 
             <div class="form-group">
               <label for="lcontra">Crea tu nueva contraseña:</label><br>
-              <input class="from-control" type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" minlength="8" onfocus="cambiarc(this)" onmouseout="volver(this)">
+              <input class="from-control" type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña" minlength="8" onfocus="cambiarc(this)" onmouseout="volver(this)"  required>
             </div>
 
             <div class="form-group">
               <label for="lcontra">Repita su contraseña</label><br>
-              <input class="from-control" type="password" id="contraseña2" name="contraseña2" placeholder="ingrese su contraseña" minlength="8" onfocus="cambiarc(this)" onmouseout="volver(this)">
+              <input class="from-control" type="password" id="contraseña2" name="contraseña2" placeholder="ingrese su contraseña" minlength="8" onfocus="cambiarc(this)" onmouseout="volver(this)"  required>
             </div>
             
             <a href="Tipo_de_Juegos.html">pinche aqui para usted colocar sus preferencias en juegos</a><br><br>
@@ -313,9 +304,10 @@
       </footer>
 
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+     
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
     
 </body>
 </html>
